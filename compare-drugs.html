@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy Medic</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="./../assets/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body class="w-full h-screen bg-[#fef7ff] flex flex-col">
+    <!-- top nav bar -->
+    <header
+      class="h-[8%] lg:h-[10%] w-full bg-white dark:bg-slate-900 flex flex-row justify-between items-center drop-shadow-xl px-2 lg:px-8 py-2"
+    >
+      <div class="h-full flex flex-row items-center space-x-2">
+        <button
+          class="flex lg:hidden"
+          type="button"
+          data-drawer-target="mobile-drawer"
+          data-drawer-show="mobile-drawer"
+          aria-controls="mobile-drawer"
+        >
+          <span class="material-symbols-outlined"> menu </span>
+        </button>
+        <div class="flex flex-row items-center space-x-2">
+          <a
+            href="./index.html"
+            class="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center"
+          >
+            <img
+              src="./../assets/images/logos/logo.png"
+              alt="logo"
+              class="w-full h-full object-contain"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="w-[70%] flex flex-row items-center justify-evenly">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+          <div
+            class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4"
+          >
+            <div
+              id="mega-menu"
+              class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            >
+              <ul
+                class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse"
+              >
+                <li>
+                  <button
+                    id="category-drop-down-button"
+                    data-dropdown-toggle="category-drop-down"
+                    class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
+                  >
+                    Categories
+                    <span class="material-symbols-outlined">
+                      arrow_drop_down
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    id="service-drop-down-button"
+                    data-dropdown-toggle="service-drop-down"
+                    class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
+                  >
+                    Services
+                    <span class="material-symbols-outlined">
+                      arrow_drop_down
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    id="resources-drop-down-button"
+                    data-dropdown-toggle="resources-drop-down"
+                    class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
+                  >
+                    Resources
+                    <span class="material-symbols-outlined">
+                      arrow_drop_down
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <a
+                    href="./help.html"
+                    class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="flex flex-row items-center space-x-8 relative">
+        <button
+          data-modal-target="login-account-modal"
+          data-modal-toggle="login-account-modal"
+          class="text-primary border rounded-full px-4 py-2 lg:border-0"
+        >
+          Login
+        </button>
+        <button
+          data-modal-target="register-account-modal"
+          data-modal-toggle="register-account-modal"
+          class="hidden lg:flex px-4 py-2 border rounded-full text-primary"
+        >
+          Create Account
+        </button>
+      </div>
+    </header>
+    <!-- end top bar -->
+    <!-- main section -->
+    <main class="w-full h-[1000vh] flex flex-col space-y-10 py-2 lg:py-10">
+      <div class="flex flex-col lg:flex-row gap-10 px-2 lg:px-10">
+        <div
+          id="compare-medication"
+          class="w-full lg:w-[70%] h-fit flex flex-col space-y-10"
+        >
+          <div class="flex flex-col space-y-2">
+            <p class="text-2xl font-semibold">Compare Medication</p>
+            <p>
+              Compare drugs uses, dosage forms, and more. No matter how similar
+              drugs are, always contact your health care provider before making
+              changes to your prescriptions.
+            </p>
+          </div>
+          <form
+            method="get"
+            action="./compare-drugs.html"
+            class="h-40 lg:h-20 w-full rounded-lg flex flex-col justify-center lg:justify-start lg:flex-row items-end gap-2"
+          >
+            <div
+              class="w-full lg:w-[80%] rounded-full flex flex-col lg:flex-row gap-2 items-center"
+            >
+              <input
+                type="text"
+                name="first_drug"
+                placeholder="Enter first drug name..."
+                class="text-input rounded-full w-full lg:w-[40%]"
+              />
+              <p class="font-bold text-lg">VS</p>
+              <input
+                type="text"
+                name="second_drug"
+                placeholder="Enter second drug name..."
+                class="text-input rounded-full w-full lg:w-[40%]"
+              />
+            </div>
+            <div
+              class="w-full lg:w-[20%] flex flex-col lg:flex-row items-center"
+            >
+              <button
+                type="submit"
+                class="hover:opacity-70 btn-primary w-full text-sm lg:text-base col-span-3 lg:col-span-1 font-medium px-5 py-3 text-center border border-primary rounded-full text-white flex items-center justify-center"
+              >
+                <span> Compare</span>
+              </button>
+            </div>
+          </form>
+
+          <div id="adverse-effects-result" class="hidden w-full p-6">
+            <h1 class="text-2xl font-bold mb-4">Paracetamol Adverse Effects</h1>
+            <p class="text-sm">
+              <span class="font-bold">Generic name:</span> acetaminophen
+            </p>
+            <div class="mt-4">
+              <h2 class="text-lg font-semibold mb-2">Dosage forms:</h2>
+              <p>
+                capsule, capsule liquid filled, elixir, liquid, powder,
+                solution, suppository, suspension, tablet, tablet chewable,
+                tablet disintegrating, tablet extended release
+              </p>
+            </div>
+            <p class="mt-4">
+              Along with its needed effects, acetaminophen (the active
+              ingredient contained in Paracetamol) may cause some unwanted
+              effects. Although not all of these side effects may occur, if they
+              do occur they may need medical attention.
+            </p>
+            <div class="mt-4">
+              <h2 class="text-lg font-semibold mb-2">Common Side Effects</h2>
+              <ul class="list-disc list-inside">
+                <li>Bloody or black, tarry stools</li>
+                <li>bloody or cloudy urine</li>
+                <li>
+                  fever with or without chills (not present before treatment and
+                  not caused by the condition being treated)
+                </li>
+                <li>
+                  pain in the lower back and/or side (severe and/or sharp)
+                </li>
+                <li>pinpoint red spots on the skin</li>
+                <li>skin rash, hives, or itching</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <h2 class="text-lg font-semibold mb-2">Rare Side Effects</h2>
+              <ul class="list-disc list-inside">
+                <li>Bloody or black, tarry stools</li>
+                <li>bloody or cloudy urine</li>
+                <li>
+                  fever with or without chills (not present before treatment and
+                  not caused by the condition being treated)
+                </li>
+                <li>
+                  pain in the lower back and/or side (severe and/or sharp)
+                </li>
+                <li>pinpoint red spots on the skin</li>
+                <li>skin rash, hives, or itching</li>
+              </ul>
+            </div>
+          </div>
+          <div id="popular-comparison-card" class="flex flex-col space-y-2">
+            <p class="text-lg font-semibold">Popular Comparisons::</p>
+            <div
+              id="popular-comparison-container"
+              class="flex flex-wrap gap-4"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          id="compared-drugs"
+          class="w-full lg:w-[70%] h-fit hidden flex-col space-y-10"
+        >
+          <div class="w-full flex">
+            <div class="flex-1 w-[50%]">
+              <div
+                class="flex justify-between items-center border p-2 h-12 mr-2"
+              >
+                <input
+                  type="text"
+                  class="border-0 outline-none ring-0 focus:ring-0 text-black"
+                  placeholder="Panadol"
+                />
+                <button class="text-gray-500 text-2xl">&times;</button>
+              </div>
+              <div class="">
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Uses
+                  </h3>
+
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2 line-clamp-3">
+                      Prescribed for Sciatica, Muscle Pain, Pain, Fever. Panadol
+                      may also be used for purposes not listed in this
+                      medication guide.
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Dosage Forms
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <ul class="mt-2 list-disc list-inside">
+                      <li>Tablet</li>
+                      <li>Liquid</li>
+                      <li>Drop</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Common Side Effects
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2">None reported</p>
+                    <a href="#" class="text-green-600"
+                      >View detailed side effects</a
+                    >
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Active Ingredients
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2">Acetamin</p>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Price Range
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2">$14.00 - $32.00</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a
+                    href="#"
+                    class="text-green-600 border border-green-600 rounded-full py-2 px-3 inline-block"
+                    >Read more about Panadol</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 w-[50%]">
+              <div class="flex justify-between items-center border p-2 h-12">
+                <input
+                  type="text"
+                  class="border-0 outline-none ring-0 focus:ring-0 text-black"
+                  placeholder="Panadol"
+                />
+                <button class="text-gray-500 text-2xl">&times;</button>
+              </div>
+              <div class="w-full">
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Uses
+                  </h3>
+                  <div class="w-full flex flex-col space-y-2 px-2">
+                    <p class="mt-2 line-clamp-4">
+                      Paracetamol is an effective mild pain reliever with a low
+                      risk of side effects. Prescribed for Sciatica, Muscle
+                    </p>
+                    <a href="#" class="text-green-600">View More</a>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Dosage Forms
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <ul class="mt-2 list-disc list-inside">
+                      <li>Tablet</li>
+                      <li>Liquid</li>
+                      <li>Drop</li>
+                      <li>Suppository</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Common Side Effects
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2">Rash, Muscles spasm</p>
+                    <a href="#" class="text-green-600"
+                      >View detailed side effects</a
+                    >
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Active Ingredients
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2 line-clamp-3">
+                      Paracetamol is an effective mild pain reliever with a low
+                      risk of side effects. Prescribed for Sciatica, Muscle
+                      Pain, Pain, Fever. Paracetamol may also be used for
+                      purposes not listed in this comparison guide.
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-4 min-h-40 w-full">
+                  <h3 class="text-sm font-semibold bg-[#aea9b1] p-2 text-white">
+                    Price Range
+                  </h3>
+                  <div class="flex flex-col space-y-2 px-2">
+                    <p class="mt-2">$14.20 - $39.00</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a
+                    href="#"
+                    class="text-green-600 border border-green-600 rounded-full py-2 text-center px-3 inline-block"
+                    >Read more about Paracetamol</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-[30%] flex flex-col space-y-3">
+          <div
+            class="w-full p-4 hidden space-y-4"
+            id="simalar-drug-right-panel"
+          >
+            <div
+              action="/search.html"
+              method="get"
+              class="hidden lg:flex h-12 w-full bg-gray-200 dark:bg-slate-800 rounded-full p-2 items-center"
+            >
+              <input
+                type="text"
+                name="q"
+                placeholder="Add more drug"
+                class="h-full w-[90%] outline-none bg-transparent border-0 rounded-full px-1"
+              />
+              <div class="w-[10%] h-full flex items-center justify-center">
+                <span class="material-symbols-outlined">search</span>
+              </div>
+            </div>
+            <h2 class="text-lg font-semibold mb-2">Similar Drugs</h2>
+            <ul class="flex flex-col space-y-2 text-green-600">
+              <li>Ibuprofen</li>
+              <li>Aspirin</li>
+              <li>Acetamin</li>
+              <li>Ibuprofen</li>
+              <li>Aspirin</li>
+              <li>Acetamin</li>
+              <li>Ibuprofen</li>
+              <li>Aspirin</li>
+              <li>Acetamin</li>
+              <li>Ibuprofen</li>
+            </ul>
+          </div>
+          <div class="card h-fit rounded-md">
+            <div class="flex flex-col space-y-7 p-2 lg:p-4 items-center">
+              <p class="text-lg font-semibold">Explore More</p>
+              <div class="w-full flex flex-col space-y-2">
+                <a
+                  href="./adverse-effects.html"
+                  class="w-full rounded-md border flex flex-col space-y-2 p-2"
+                >
+                  <p class="text-lg font-bold">Adverse Effects Checker</p>
+                  <p>Check potential side effects of medications.</p>
+                </a>
+                <a
+                  href="./compare-drugs.html"
+                  class="w-full rounded-md border flex flex-col space-y-2 p-2"
+                >
+                  <p class="text-lg font-bold">Compare Drugs</p>
+                  <p>Compare multiple medications based on various criteria.</p>
+                </a>
+                <a
+                  href="./drug-interaction-checker.html"
+                  class="w-full rounded-md border flex flex-col space-y-2 p-2"
+                >
+                  <p class="text-lg font-bold">Drug Interaction Checker</p>
+                  <p>Check possible interactions for various medications</p>
+                </a>
+                <a
+                  href="./search-pharmacy.html"
+                  class="w-full rounded-md border flex flex-col space-y-2 p-2"
+                >
+                  <p class="text-lg font-bold">Pharmacy locator</p>
+                  <p>Find pharmacies near you.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="popular-drugs" class="w-full h-fit flex flex-col space-y-4">
+        <p class="text-2xl font-semibold mx-10">Popular drugs</p>
+
+        <div class="w-full flex flex-row justify-between items-center">
+          <div class="w-[10%] hidden lg:flex items-center justify-center">
+            <button
+              class="w-10 h-10 rounded-full border flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined"> arrow_back </span>
+            </button>
+          </div>
+          <div
+            class="w-full lg:w-[80%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-10 gap-6 px-2"
+          >
+            <a
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/1.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/2.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/3.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/1.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="w-[10%] hidden lg:flex items-center justify-center">
+            <button
+              class="w-10 h-10 rounded-full border flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined"> arrow_forward </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer
+      class="h-fit w-full bg-[#48464C] dark:bg-slate-900 py-2 flex flex-col justify-between"
+    >
+      <div
+        class="px-2 md:px-6 xl:px-20 flex flex-col lg:flex-row space-y-3 lg:space-y-0 items-start pt-12 pb-10 lg:justify-between"
+      >
+        <div
+          class="w-full lg:w-[25%] flex flex-col items-center lg:items-start space-y-3 text-white"
+        >
+          <p class="text-sm xl:text-xl font-semibold text-gray-300">
+            Subscribe to our Newsletter
+          </p>
+          <p class="text-xs xl:text-base">
+            Receive relevant offers, health tips, and news
+          </p>
+          <div class="w-full flex flex-col space-y-4 items-center">
+            <input
+              placeholder="Email address"
+              class="rounded-full h-12 text-input bg-white border-gray-500 dark:bg-gray-800"
+            />
+
+            <button
+              ariaLabel="Subscribe button"
+              class="btn-primary h-fit w-fit px-6 py-3 rounded-full"
+            >
+              <p>Subscribe</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- desktop items  -->
+        <div class="hidden lg:flex flex-row w-[70%] justify-between">
+          <div class="flex flex-col space-y-5">
+            <p class="text-white font-semibold text-sm xl:text-xl">Services</p>
+            <div class="flex flex-col space-y-2">
+              <a
+                href="./compare-drugs.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Compare Drugs
+                </p>
+              </a>
+              <a
+                href="./adverse-effects.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Adverse Effects Checker
+                </p>
+              </a>
+              <a
+                href="./drug-interaction-checker.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Drug Interaction Checker
+                </p>
+              </a>
+              <a
+                href="/search-pharmacy.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Pharmacy Locator
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col space-y-5">
+            <p class="text-white font-semibold text-sm xl:text-xl">
+              Partnership
+            </p>
+            <div class="flex flex-col space-y-2">
+              <a href="'/" class="flex flex-row items-center space-x-2">
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Register Pharmacy
+                </p>
+              </a>
+              <a href="'/" class="flex flex-row items-center space-x-2">
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Career
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col space-y-5">
+            <p class="text-white font-semibold text-sm xl:text-xl">Support</p>
+            <div class="flex flex-col space-y-2">
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  FAQs
+                </p>
+              </a>
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Contact Us
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col space-y-5">
+            <p class="text-white font-semibold text-sm xl:text-xl">Resources</p>
+            <div class="flex flex-col space-y-2">
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  Support
+                </p>
+              </a>
+              <a
+                href="./news-update.html"
+                class="flex flex-row items-center space-x-2"
+              >
+                <p class="text-white font-semibold text-xs xl:text-base">
+                  News Update
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobile menus -->
+        <div class="w-full flex lg:hidden flex-col border-t">
+          <div
+            id="accordion-collapse"
+            class="w-full"
+            data-accordion="collapse"
+            data-active-classes="bg-inherit"
+          >
+            <div class="flex flex-col border-b py-2 px-2">
+              <h2 id="service-accordion" class="w-full">
+                <button
+                  type="button"
+                  class="w-full flex flex-row py-3 items-center justify-between"
+                  data-accordion-target="#service-accordion-body"
+                  aria-controls="service-accordion-body"
+                  aria-expanded="true"
+                >
+                  <span class="text-white">Services</span>
+                  <span
+                    data-accordion-icon
+                    class="material-symbols-outlined text-white"
+                  >
+                    arrow_drop_up
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="service-accordion-body"
+                class="hidden"
+                aria-labelledby="service-accordion"
+              >
+                <div class="flex flex-col space-y-3 items-center">
+                  <a
+                    href="./compare-drugs.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Compare Drugs
+                    </p>
+                  </a>
+                  <a
+                    href="./adverse-effects.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Adverse Effects Checker
+                    </p>
+                  </a>
+                  <a
+                    href="./drug-interaction-checker.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Drug Interaction Checker
+                    </p>
+                  </a>
+                  <a
+                    href="./search-pharmacy.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Pharmacy Locator
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col border-b py-2 px-2">
+              <h2 id="partnership-accordion" class="w-full">
+                <button
+                  type="button"
+                  class="w-full flex flex-row py-3 items-center justify-between"
+                  data-accordion-target="#partnership-accordion-body"
+                  aria-controls="partnership-accordion-body"
+                >
+                  <span class="text-white">Partnerships</span>
+                  <span
+                    data-accordion-icon
+                    class="material-symbols-outlined text-white"
+                  >
+                    arrow_drop_up
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="partnership-accordion-body"
+                class="hidden"
+                aria-labelledby="partnership-accordion"
+              >
+                <div class="flex flex-col space-y-3 items-center">
+                  <a href="'/" class="flex flex-row items-center space-x-2">
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Register Pharmacy
+                    </p>
+                  </a>
+                  <a href="'/" class="flex flex-row items-center space-x-2">
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Career
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col border-b py-2 px-2">
+              <h2 id="support-accordion" class="w-full">
+                <button
+                  type="button"
+                  class="w-full flex flex-row py-3 items-center justify-between"
+                  data-accordion-target="#support-accordion-body"
+                  aria-controls="support-accordion-body"
+                >
+                  <span class="text-white">Support</span>
+                  <span
+                    data-accordion-icon
+                    class="material-symbols-outlined text-white"
+                  >
+                    arrow_drop_up
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="support-accordion-body"
+                class="hidden"
+                aria-labelledby="support-accordion"
+              >
+                <div class="flex flex-col space-y-3 items-center">
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      FAQs
+                    </p>
+                  </a>
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Contact Us
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col border-b py-2 px-2">
+              <h2 id="resources-accordion" class="w-full">
+                <button
+                  type="button"
+                  class="w-full flex flex-row py-3 items-center justify-between"
+                  data-accordion-target="#resources-accordion-body"
+                  aria-controls="resources-accordion-body"
+                >
+                  <span class="text-white">Resources</span>
+                  <span
+                    data-accordion-icon
+                    class="material-symbols-outlined text-white"
+                  >
+                    arrow_drop_up
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="resources-accordion-body"
+                class="hidden"
+                aria-labelledby="resources-accordion"
+              >
+                <div class="flex flex-col space-y-3 items-center">
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Support
+                    </p>
+                  </a>
+                  <a
+                    href="./news-update.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      News Update
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="lg:border-t-2 h-fit px-2 md:px-6 xl:px-20 flex flex-col-reverse lg:flex-row items-center space-y-10 lg:space-y-0 py-2 justify-between"
+      >
+        <div class="flex flex-row items-center space-x-2 mt-10 lg:mt-0">
+          <span class="material-symbols-outlined text-white"> copyright </span>
+          <p class="text-white">2024, Medloc.</p>
+        </div>
+        <div class="flex flex-row items-center space-x-5">
+          <a aria-label="Terms and Conditions link" class="text-white">
+            Terms and Conditions
+          </a>
+          <a href="/" aria-label="Privacy Policy link" class="text-white">
+            Privacy Policy
+          </a>
+        </div>
+        <div class="flex flex-row items-center space-x-4">
+          <a href="https://facebook.com/" aria-label="Facebook link">
+            <img
+              src="./../assets/images/icons/facebook.png"
+              class="w-8 h-8 text-white"
+            />
+          </a>
+          <a href="https://instagram.com/" aria-label="Facebook link">
+            <img
+              src="./../assets/images/icons/instagram.png"
+              class="w-8 h-8 text-white"
+            />
+          </a>
+          <a href="https://x.com/" aria-label="Facebook link">
+            <img
+              src="./../assets/images/icons/x.png"
+              class="w-8 h-8 text-white"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- drawer component -->
+    <div
+      id="mobile-drawer"
+      class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800"
+      tabindex="-1"
+      aria-labelledby="mobile-drawer-label"
+    >
+      <div class="flex flex-row space-x-2 border-b">
+        <button
+          type="button"
+          data-drawer-hide="mobile-drawer"
+          aria-controls="mobile-drawer"
+        >
+          <span class="material-symbols-outlined"> close </span>
+        </button>
+        <div class="flex flex-row items-center space-x-2">
+          <a
+            href="./index.html"
+            class="w-16 h-10 flex items-center justify-center"
+          >
+            <img
+              src="./../assets/images/logos/logo.png"
+              alt="logo"
+              class="w-full h-full object-contain"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col overflow-y-auto no-scrollbar space-y-2 py-4">
+        <div class="faq-card border-b">
+          <div
+            class="faq-question py-2 flex justify-between items-center cursor-pointer"
+          >
+            <span class="font-semibold">Categories</span>
+            <span
+              class="material-icons text-gray-600 transform transition-transform duration-300"
+              >arrow_drop_down</span
+            >
+          </div>
+          <ul class="faq-answer hidden py-2 flex-col space-y-2">
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Men's health
+              </a>
+            </li>
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Women's health
+              </a>
+            </li>
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Mom and baby
+              </a>
+            </li>
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Supplements
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                OTC
+              </a>
+            </li>
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Prescriptions
+              </a>
+            </li>
+            <li>
+              <a
+                href="./sub-categories.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Pain relief
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="faq-card border-b">
+          <div
+            class="faq-question py-2 flex justify-between items-center cursor-pointer"
+          >
+            <span class="font-semibold">Services</span>
+            <span
+              class="material-icons text-gray-600 transform transition-transform duration-300"
+              >arrow_drop_down</span
+            >
+          </div>
+          <ul class="faq-answer hidden py-2 flex-col space-y-2">
+            <li>
+              <a
+                href="./adverse-effects.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Adverse Effects Checker
+              </a>
+            </li>
+            <li>
+              <a
+                href="./compare-drugs.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Compare drugs
+              </a>
+            </li>
+            <li>
+              <a
+                href="./drug-interaction-checker.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+                >Drug interaction checker
+              </a>
+            </li>
+            <li>
+              <a
+                href="./search-pharmacy.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Pharmacy locator
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="faq-card border-b">
+          <div
+            class="faq-question py-2 flex justify-between items-center cursor-pointer"
+          >
+            <span class="font-semibold">Resources</span>
+            <span
+              class="material-icons text-gray-600 transform transition-transform duration-300"
+              >arrow_drop_down</span
+            >
+          </div>
+          <ul class="faq-answer hidden py-2 flex-col space-y-2">
+            <li>
+              <a
+                href="./blogs.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href="./news-update.html"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >
+                News update
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a
+          href="./help.html"
+          class="py-2 flex justify-between items-center cursor-pointer border-b"
+        >
+          <span class="font-semibold">Contact Us</span>
+        </a>
+      </div>
+    </div>
+    <!-- end drawer component -->
+
+    <!-- dropdowns -->
+    <!-- category dropdown -->
+    <div
+      id="category-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="category-drop-down-button">
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Men's health
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Women's health
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Mom and baby
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Supplements
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              OTC
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Prescriptions
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Pain relief
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end category drop down -->
+    <!-- services dropdown -->
+    <div
+      id="service-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="service-drop-down-button">
+          <li>
+            <a
+              href="./adverse-effects.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Adverse effects checker
+            </a>
+          </li>
+          <li>
+            <a
+              href="./compare-drugs.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Compare drugs
+            </a>
+          </li>
+          <li>
+            <a
+              href="./drug-interaction-checker.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >Drug interaction checker
+            </a>
+          </li>
+          <li>
+            <a
+              href="./search-pharmacy.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Pharmacy locator
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end services drop down -->
+    <!-- resources drop down -->
+    <div
+      id="resources-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="resources-drop-down-button">
+          <li>
+            <a
+              href="./blogs.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="./news-update.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              News update
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end resources drop down -->
+    <!-- end dropdowns -->
+
+    <!-- modals -->
+    <!-- register modal -->
+    <div
+      id="register-account-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div
+        class="bg-white w-[95%] md:w-[50%] lg:w-[50%] xl:w-[40%] max-h-[95%] mx-auto rounded-lg flex flex-col overflow-y-auto no-scrollbar p-2 lg:px-10"
+      >
+        <!-- Modal content -->
+        <form class="relative">
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-center p-4 md:p-5 rounded-t dark:border-gray-600 relative"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Welcome to Medloc
+            </h3>
+            <button
+              type="button"
+              class="absolute right-0 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="register-account-modal"
+            >
+              <span class="material-symbols-outlined"> close </span>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="w-full p-4 md:p-5 flex flex-col space-y-6">
+            <form class="flex flex-col items-center space-y-5 py-5 px-2">
+              <div class="w-full flex flex-col space-y-5 items-center">
+                <div class="input-group">
+                  <label class="input-label">First and Last Name </label>
+                  <input type="text" class="text-input rounded-lg" />
+                </div>
+                <div class="input-group">
+                  <label class="input-label">Email </label>
+                  <input type="email" class="text-input rounded-lg" />
+                </div>
+                <div class="input-group w-full relative">
+                  <label class="input-label">Password </label>
+                  <input
+                    type="password"
+                    class="passwordInput text-input"
+                    placeholder="At least 8 characters"
+                  />
+                  <button
+                    type="button"
+                    class="togglePasswordVisibility absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+                  >
+                    <span class="material-symbols-outlined">
+                      visibility_off
+                    </span>
+                  </button>
+                </div>
+
+                <div class="input-group w-full relative">
+                  <label class="input-label">Confirm Password </label>
+                  <input type="password" class="passwordInput text-input" />
+                  <button
+                    type="button"
+                    class="togglePasswordVisibility absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+                  >
+                    <span class="material-symbols-outlined">
+                      visibility_off
+                    </span>
+                  </button>
+                </div>
+
+                <div class="w-full flex flex-col space-y-6 items-center">
+                  <button
+                    type="button"
+                    style="background-color: #2a8420"
+                    class="text-white hover:opacity-70 font-medium rounded-full text-sm px-5 py-3 text-center w-full"
+                  >
+                    Create Account
+                  </button>
+
+                  <p class="text-xl font-bold">OR</p>
+
+                  <button
+                    type="button"
+                    class="hover:opacity-70 font-medium text-sm px-5 py-3 text-center w-full border border-primary rounded-full text-primary flex items-center space-x-4 justify-center"
+                  >
+                    <img
+                      src="./assets/images/icons/google.png"
+                      class="w-4 h-4"
+                      alt=""
+                    />
+                    Create Account with Google
+                  </button>
+                </div>
+                <p class="text-center text-sm">
+                  By continuing, you confirm that you are an adult. By creating
+                  an account, you agree to the
+                  <a href="#" class="text-link">Medloc Terms & Agreement</a>
+                  and <a href="#" class="text-link">Privacy Policy</a>
+                </p>
+
+                <div
+                  class="w-[69%] border-t flex test-sm items-center justify-center py-3 space-x-2"
+                >
+                  <p>Already created an account?</p>
+                  <button
+                    data-modal-hide="register-account-modal"
+                    data-modal-target="login-account-modal"
+                    data-modal-toggle="login-account-modal"
+                    class="text-link"
+                    type="button"
+                  >
+                    Login
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end modal body -->
+        </form>
+      </div>
+    </div>
+    <!-- end register modal -->
+
+    <!-- login modal -->
+    <div
+      id="login-account-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div
+        class="bg-white w-[95%] md:w-[50%] lg:w-[50%] xl:w-[40%] max-h-[95%] mx-auto rounded-lg flex flex-col overflow-y-auto no-scrollbar p-2 lg:px-10"
+      >
+        <!-- Modal content -->
+        <form class="relative">
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-center p-4 md:p-5 rounded-t dark:border-gray-600 relative"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Welcome to Medloc
+            </h3>
+            <button
+              type="button"
+              class="absolute right-0 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="login-account-modal"
+            >
+              <span class="material-symbols-outlined"> close </span>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="w-full p-4 md:p-5 flex flex-col space-y-6">
+            <form class="flex flex-col items-center space-y-5 py-5 px-2">
+              <div class="w-full flex flex-col space-y-5 items-center">
+                <div class="input-group">
+                  <label class="input-label">Email </label>
+                  <input type="email" class="text-input rounded-lg" />
+                </div>
+                <div class="input-group w-full relative">
+                  <label class="input-label">Password </label>
+                  <input
+                    type="password"
+                    class="passwordInput text-input"
+                    placeholder="At least 8 characters"
+                  />
+                  <button
+                    type="button"
+                    class="togglePasswordVisibility absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+                  >
+                    <span class="material-symbols-outlined">
+                      visibility_off
+                    </span>
+                  </button>
+                </div>
+
+                <div class="w-full flex flex-col space-y-6 items-center">
+                  <button
+                    type="button"
+                    style="background-color: #2a8420"
+                    class="text-white hover:opacity-70 font-medium rounded-full text-sm px-5 py-3 text-center w-full"
+                  >
+                    Login
+                  </button>
+
+                  <p class="text-xl font-bold">OR</p>
+
+                  <button
+                    type="button"
+                    class="hover:opacity-70 font-medium text-sm px-5 py-3 text-center w-full border border-primary rounded-full text-primary flex items-center space-x-4 justify-center"
+                  >
+                    <img
+                      src="./assets/images/icons/google.png"
+                      class="w-4 h-4"
+                      alt=""
+                    />
+                    Login with Google
+                  </button>
+                </div>
+
+                <div
+                  class="min-w-[60%] max-w-[80%] border-t flex text-sm items-center justify-center py-3 space-x-2"
+                >
+                  <p>Don’t have an account yet?</p>
+                  <button
+                    data-modal-hide="login-account-modal"
+                    data-modal-target="register-account-modal"
+                    data-modal-toggle="register-account-modal"
+                    class="text-link"
+                    type="button"
+                  >
+                    Create Account
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end modal body -->
+        </form>
+      </div>
+    </div>
+    <!-- end login modal -->
+    <!-- end modals -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/compare-drugs.js"></script>
+  </body>
+</html>
