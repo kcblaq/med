@@ -1,0 +1,11 @@
+.star {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  fill: transparent;
+  stroke: #633b48;
+  stroke-width: 2;
+}
+.star-filled {
+  fill: #633b48;
+}

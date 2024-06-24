@@ -36,7 +36,7 @@
   }
 
   .btn-primary-outline {
-    @apply inline-flex items-center justify-center px-4 py-2 border border-primary rounded-sm font-semibold text-xs text-white tracking-widest hover:opacity-70 active:bg-primary focus:outline-none focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150;
+    @apply inline-flex items-center justify-center px-4 py-2 border border-primary rounded-sm font-semibold text-xs text-primary tracking-widest hover:opacity-70 active:bg-primary focus:outline-none focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150;
   }
 
   .input-group {
@@ -57,5 +57,9 @@
 
   .card-content {
     @apply w-full h-full p-1 flex flex-col space-y-3 overflow-y-auto no-scrollbar;
+  }
+
+  .text-link {
+    @apply text-primary cursor-pointer hover:opacity-80;
   }
 }

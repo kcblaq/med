@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Pain Reliever",
+    "amount": 10.99,
+    "maxAmount": 50,
+    "perTablet": 0.5,
+    "image": "./assets/images/drug/1.png"
+  },
+  {
+    "id": 2,
+    "title": "Allergy Medication",
+    "amount": 8.75,
+    "maxAmount": 30,
+    "perTablet": 0.25,
+    "image": "./assets/images/drug/2.png"
+  },
+  {
+    "id": 3,
+    "title": "Cough Syrup",
+    "amount": 12.49,
+    "maxAmount": 20,
+    "perTablet": null,
+    "image": "./assets/images/drug/3.png"
+  },
+  {
+    "id": 4,
+    "title": "Vitamin C Tablets",
+    "amount": 5.99,
+    "maxAmount": 60,
+    "perTablet": 0.1,
+    "image": "./assets/images/drug/1.png"
+  },
+  {
+    "id": 5,
+    "title": "Antibiotic",
+    "amount": 15.25,
+    "maxAmount": 15,
+    "perTablet": 1.0,
+    "image": "./assets/images/drug/2.png"
+  },
+  {
+    "id": 6,
+    "title": "Headache Relief",
+    "amount": 7.99,
+    "maxAmount": 40,
+    "perTablet": 0.3,
+    "image": "./assets/images/drug/3.png"
+  },
+  {
+    "id": 7,
+    "title": "Digestive Aid",
+    "amount": 9.49,
+    "maxAmount": 25,
+    "perTablet": null,
+    "image": "./assets/images/drug/1.png"
+  },
+  {
+    "id": 8,
+    "title": "Sleeping Pills",
+    "amount": 18.75,
+    "maxAmount": 10,
+    "perTablet": 0.75,
+    "image": "./assets/images/drug/2.png"
+  },
+  {
+    "id": 9,
+    "title": "Cold Medicine",
+    "amount": 11.99,
+    "maxAmount": 35,
+    "perTablet": 0.15,
+    "image": "./assets/images/drug/3.png"
+  },
+  {
+    "id": 10,
+    "title": "Muscle Relaxant",
+    "amount": 14.5,
+    "maxAmount": 18,
+    "perTablet": null,
+    "image": "./assets/images/drug/1.png"
+  }
+]

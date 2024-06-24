@@ -1,0 +1,19 @@
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: none;
+  transition: transform 0.5s ease; /* Added transition for smooth scrolling */
+}
+.carousel-item.active {
+  display: flex;
+}
+@media (min-width: 640px) {
+  .carousel-item {
+    flex: 0 0 calc(100% / 3);
+  }
+}

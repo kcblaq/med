@@ -1,57 +1,76 @@
 $(() => {
-  let isProfileMenuOpen = false;
-  let isNotificationMenuOpen = false;
-  $("#open-profile-menus").on("click", (event) => {
-    if (!isProfileMenuOpen) {
-      // Toggle state only if not already open
-      $("#profile-menus").removeClass("hidden").addClass("flex");
-      $("#notification-menus").addClass("hidden").removeClass("flex");
-      isNotificationMenuOpen = false;
-      isProfileMenuOpen = true; // Update modal state
+  let viewMoreStatus = false;
+  // toggle view more
+  $("#view-more-button").on("click", () => {
+    if (viewMoreStatus) {
+      viewMoreStatus = false;
+      $("#view-more").hide();
+      $(".view-more-button-icon").removeClass("rotate-180");
     } else {
-      $("#profile-menus").addClass("hidden").removeClass("flex");
-      isProfileMenuOpen = false; // Update modal state
+      viewMoreStatus = true;
+      $("#view-more").show();
+      $(".view-more-button-icon").addClass("rotate-180");
     }
   });
 
-  $("#open-notification-menus").on("click", (event) => {
-    if (!isNotificationMenuOpen) {
-      // Toggle state only if not already open
-      $("#notification-menus").removeClass("hidden").addClass("flex");
-      isProfileMenuOpen = false;
-      $("#profile-menus").addClass("hidden").removeClass("flex");
-      isNotificationMenuOpen = true; // Update modal state
-    } else {
-      $("#notification-menus").addClass("hidden").removeClass("flex");
-      isNotificationMenuOpen = false; // Update modal state
-    }
+  // render products
+  $.getJSON("./assets/data/product.json", function (data) {
+    $.each(data, function (key, value) {
+      $("#products").append(
+        `<a
+          href='./product-details.html'
+            class="w-full h-fit border flex flex-col items-start rounded-lg hover:opacity-70"
+          >
+            <div
+              class="w-full h-44 lg:h-64 bg-white dark:bg-slate-700 rounded-t-lg"
+            >
+              <img
+                alt="Emzor Paracetamol 500mg"
+                src="${value.image}"
+                class="w-full h-full rounded-t-lg object-cover"
+              />
+            </div>
+            <div
+              class="w-full flex flex-col space-y-1 items-start p-2 py-3 bg-[#f7f2fa]"
+            >
+              <div class="w-full flex flex-row space-x-2 items-end">
+                <p class="text-lg font-semibold">$${value.amount}</p>
+
+                ${
+                  value.perTablet
+                    ? ' <span class="text-xs text-gray-400"> 1 / Tablets </span>'
+                    : `<span class="flex items-end space-x-2">
+                        <p>-</p>
+                        <p class="text-lg font-semibold">$${value.maxAmount}</p>
+                    </span>
+`
+                }
+               
+              </div>
+              <p class="w-full line-clamp-2 font-semibold">${value.title}</p>
+            </div>
+          </a>`
+      );
+    });
   });
 
-  // Function to switch tabs
-  function switchTab(tabId, tabs, contents) {
-    // Remove border-primary class from all tabs
-    tabs.removeClass("border-primary");
-    // Hide all tab contents
-    contents.addClass("hidden");
-    // Show the selected tab content
-    $("#" + tabId + "-content").removeClass("hidden");
-    // Add border-primary class to the active tab button
-    $("#" + tabId + "-tab").addClass("border-primary");
+  // load google maps
+  // Initialize and add the map
+  function initMap() {
+    // The location of the center point
+    const centerPoint = { lat: -34.397, lng: 150.644 };
+    // The map, centered at the center point
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 8,
+      center: centerPoint,
+    });
+    // The marker, positioned at the center point
+    const marker = new google.maps.Marker({
+      position: centerPoint,
+      map: map,
+    });
   }
-  switchTab("default", $(".tab-button"), $(".tab-content"));
-  $(".tab-button").on("click", function () {
-    var tabId = $(this).attr("id").replace("-tab", "");
-    switchTab(tabId, $(".tab-button"), $(".tab-content"));
-  });
 
-  // drop downs
-  // close notification drop down incase anywhere is clicked
-  $("#notification-dropdown").on("click", () => {
-    $("#notification-dropdown").removeClass("absolute").addClass("hidden");
-  });
-
-  // close message dropdown incase anywhere is clicked
-  $("#messages-dropdown").on("click", () => {
-    $("#messages-dropdown").removeClass("absolute").addClass("hidden");
-  });
+  // Call initMap to load the map
+  initMap();
 });
