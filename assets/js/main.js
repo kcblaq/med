@@ -70,9 +70,20 @@ $(() => {
     },
   });
 
-  //
-  $(".faq-question").click(function () {
-    $(this).next(".faq-answer").slideToggle();
+  $(".faq-question").on("click", function () {
+    $(this).next(".faq-answer").slideToggle(1000);
     $(this).find(".material-icons").toggleClass("rotate-180");
+  });
+
+  // toggle view more  //
+  let viewMoreStatus = false;
+  $("#view-more-button").on("click", () => {
+    if (viewMoreStatus) {
+      viewMoreStatus = false;
+      $("#view-more").hide();
+    } else {
+      viewMoreStatus = true;
+      $("#view-more").show();
+    }
   });
 });

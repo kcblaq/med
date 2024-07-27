@@ -1,19 +1,26 @@
-.carousel-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+.slick-slide {
+  margin: 0 10px; /* Adjust the margin value as needed */
 }
-.carousel-item {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  display: none;
-  transition: transform 0.5s ease; /* Added transition for smooth scrolling */
+
+/* Adjust the slick-track to avoid overflow due to margins */
+.slick-list {
+  margin: 0 -10px; /* Same value as the margin on .slick-slide */
 }
-.carousel-item.active {
-  display: flex;
+
+/* Change the size of the dots */
+.slick-dots li button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
 }
-@media (min-width: 640px) {
-  .carousel-item {
-    flex: 0 0 calc(100% / 3);
-  }
+
+/* Change the background color of the dots */
+.slick-dots li button:before {
+  font-size: 16px !important; /* Adjust the font-size to change the dot size */
+  color: gray !important; /* Default color */
+}
+
+/* Change the active dot color */
+.slick-dots li.slick-active button:before {
+  color: #2a8420 !important; /* Active dot color */
 }

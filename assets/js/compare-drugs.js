@@ -10,7 +10,7 @@ $(() => {
   const container = $("#popular-comparison-container");
   data.forEach(function (item) {
     container.append(
-      '<a href="#" class="medication-button px-2 py-1 bg-white rounded-xl drop-shadow-xl">' +
+      '<a href="#" class="medication-button px-2 py-1 bg-[#f7f2fa] rounded-xl drop-shadow-xl">' +
         item[0] +
         " vs " +
         item[1] +
@@ -34,7 +34,9 @@ $(() => {
   var queryValue = getParameterByName("first_drug");
 
   if (queryValue) {
-    $("#popular-drugs").hide();
+    var screenWidth = $(window).width();
+    screenWidth <= 768 ? $("#explore-more").hide() : $("#popular-drugs").hide();
+
     $("#popular-comparison-card").hide();
     $("#compare-medication").hide();
     $("#compared-drugs").show();

@@ -14,9 +14,7 @@
     />
     <link rel="stylesheet" href="./../assets/css/table.css" />
     <link rel="stylesheet" href="./../assets/css/main.css" />
-    <!-- <script src="./../node_modules/jquery/dist/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
   </head>
   <body class="w-screen h-screen bg-[#fef7ff] flex flex-col">
     <!-- top nav bar -->
@@ -34,7 +32,10 @@
           <span class="material-symbols-outlined"> menu </span>
         </button>
         <div class="flex flex-row items-center space-x-2">
-          <a class="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center">
+          <a
+            href="./index.html"
+            class="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center"
+          >
             <img
               src="./../assets/images/logos/logo.png"
               alt="logo"
@@ -531,7 +532,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           data-modal-id="flash-sale-modal"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
@@ -558,7 +559,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
                           <p class="text-primary">Create</p>
@@ -586,7 +587,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
                           <p class="text-primary">Create</p>
@@ -614,7 +615,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
                           <p class="text-primary">Create</p>
@@ -640,7 +641,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
                           <p class="text-primary">Create</p>
@@ -676,7 +677,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           data-modal-id="free-shipping-modal"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
@@ -705,7 +706,7 @@
                       </div>
                       <div>
                         <button
-                          ariaLabel="Join campaign button"
+                          aria-label="Join campaign button"
                           class="rounded-full px-6 py-2 border border-primary"
                         >
                           <p class="text-primary">Create</p>
@@ -801,7 +802,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="dropdownDefaultButton"
                         data-dropdown-toggle="dropdown"
                         class="flex flex-row items-start space-x-2"
@@ -884,7 +885,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="dropDown2"
                         data-dropdown-toggle="dropdown-2"
                         class="flex flex-row items-start space-x-2"
@@ -967,7 +968,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="dropDown3"
                         data-dropdown-toggle="dropdown-3"
                         class="flex flex-row items-start space-x-2"
@@ -1050,7 +1051,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="dropDown2"
                         data-dropdown-toggle="dropdown-2"
                         class="flex flex-row items-start space-x-2"
@@ -1239,7 +1240,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="disableDropDown1"
                         data-dropdown-toggle="disable-dropdown-1"
                         class="flex flex-row items-start space-x-2"
@@ -1311,7 +1312,7 @@
 
                     <td class="px-6 py-4">
                       <button
-                        ariaLabel="Edit button"
+                        aria-label="Edit button"
                         id="disableDropDown2"
                         data-dropdown-toggle="disable-dropdown-2"
                         class="flex flex-row items-start space-x-2"
@@ -1506,7 +1507,9 @@
         <div class="w-full flex flex-col space-y-10 py-4">
           <div class="modal-header flex justify-between items-center pb-3">
             <p class="text-2xl font-bold modal-title">Create Flash Sales</p>
-            <button class="modal-close focus:outline-none">
+            <button
+              class="modal-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
               <span class="material-symbols-outlined"> close </span>
             </button>
           </div>
@@ -1630,7 +1633,7 @@
                     <label class="input-label">Discount Percentage </label>
                     <input
                       type="text"
-                      class="text-input rounded-md"
+                      class="text-input"
                       placeholder="E.g. 10%"
                     />
                   </div>
@@ -1641,17 +1644,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input
-                        id="time"
-                        type="time"
-                        class="text-input rounded-md"
-                      />
+                      <input id="time" type="time" class="text-input" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -1660,13 +1659,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input type="time" class="text-input rounded-md" />
+                      <input type="time" class="text-input" />
                     </div>
                   </div>
                 </div>
@@ -1684,7 +1683,7 @@
                   <p class="text-green-500">Cancel</p>
                 </button>
                 <button
-                  ariaLabel="Add New Product button"
+                  aria-label="Add New Product button"
                   type="button"
                   style="background-color: #2a8420"
                   class="btn-primary decoration-black rounded-full py-3 px-4"
@@ -1710,7 +1709,9 @@
         <div class="w-full flex flex-col space-y-10 py-4">
           <div class="modal-header flex justify-between items-center pb-3">
             <p class="text-2xl font-bold modal-title">Create free shippings</p>
-            <button class="modal-close focus:outline-none">
+            <button
+              class="modal-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
               <span class="material-symbols-outlined"> close </span>
             </button>
           </div>
@@ -1835,7 +1836,7 @@
                     <label class="input-label">Discount Percentage </label>
                     <input
                       type="text"
-                      class="text-input rounded-md"
+                      class="text-input"
                       placeholder="E.g. 10%"
                     />
                   </div>
@@ -1846,17 +1847,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input
-                        id="time"
-                        type="time"
-                        class="text-input rounded-md"
-                      />
+                      <input id="time" type="time" class="text-input" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -1865,13 +1862,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input type="time" class="text-input rounded-md" />
+                      <input type="time" class="text-input" />
                     </div>
                   </div>
                 </div>
@@ -1889,7 +1886,7 @@
                   <p class="text-green-500">Cancel</p>
                 </button>
                 <button
-                  ariaLabel="Add New Product button"
+                  aria-label="Add New Product button"
                   type="button"
                   style="background-color: #2a8420"
                   class="btn-primary decoration-black rounded-full py-3 px-4"
@@ -1915,7 +1912,9 @@
         <div class="w-full flex flex-col space-y-10 py-4">
           <div class="modal-header flex justify-between items-center pb-3">
             <p class="text-2xl font-bold modal-title">Edit Modal</p>
-            <button class="modal-close focus:outline-none">
+            <button
+              class="modal-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
               <span class="material-symbols-outlined"> close </span>
             </button>
           </div>
@@ -2040,7 +2039,7 @@
                     <label class="input-label">Discount Percentage </label>
                     <input
                       type="text"
-                      class="text-input rounded-md"
+                      class="text-input"
                       placeholder="E.g. 10%"
                     />
                   </div>
@@ -2051,17 +2050,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input
-                        id="time"
-                        type="time"
-                        class="text-input rounded-md"
-                      />
+                      <input id="time" type="time" class="text-input" />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -2070,13 +2065,13 @@
                       <input
                         datepicker
                         type="text"
-                        class="text-input rounded-md text-gray-900 text-sm block w-full"
+                        class="text-input text-gray-900 text-sm block w-full"
                         placeholder="DD/MM/YYYY"
                       />
                     </div>
                     <div class="input-group">
                       <label class="input-label">Time </label>
-                      <input type="time" class="text-input rounded-md" />
+                      <input type="time" class="text-input" />
                     </div>
                   </div>
                 </div>
@@ -2094,7 +2089,7 @@
                   <p class="text-green-500">Cancel</p>
                 </button>
                 <button
-                  ariaLabel="Add New Product button"
+                  aria-label="Add New Product button"
                   type="button"
                   style="background-color: #2a8420"
                   class="btn-primary decoration-black rounded-full py-3 px-4"
@@ -2742,10 +2737,9 @@
     <!-- end message modals -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-    <!-- <script src="./../node_modules/flowbite/dist/flowbite.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="./../assets/js/main.js"></script>
-    <script src="./../assets/js/pharmacy.js"></script>
+    <script src="./../assets/js/pharmacy/main.js"></script>
     <script src="./../assets/js/pharmacy/promotion.js"></script>
     <script src="./../assets/js/modal.js"></script>
   </body>

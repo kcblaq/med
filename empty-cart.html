@@ -12,10 +12,19 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    <link rel="stylesheet" href="./../assets/css/main.css" />
-    <link rel="stylesheet" href="./../assets/css/table.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/carousel.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/js/carousel-plugin-slick/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/js/carousel-plugin-slick/slick/slick-theme.css"
+    />
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/carousel-plugin-slick/slick/slick.js"></script>
   </head>
   <body class="w-full h-screen bg-[#fef7ff] flex flex-col">
     <!-- top nav bar -->
@@ -33,9 +42,12 @@
           <span class="material-symbols-outlined"> menu </span>
         </button>
         <div class="flex flex-row items-center space-x-2">
-          <a class="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center">
+          <a
+            href="./index.html"
+            class="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center"
+          >
             <img
-              src="./../assets/images/logos/logo.png"
+              src="./assets/images/logos/logo.png"
               alt="logo"
               class="w-full h-full object-contain"
             />
@@ -81,26 +93,6 @@
                       arrow_drop_down
                     </span>
                   </button>
-                  <div
-                    id="category-drop-down"
-                    class="absolute z-10 flex hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
-                  >
-                    <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                      <ul
-                        class="space-y-4"
-                        aria-labelledby="category-drop-down-button"
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
-                          >
-                            1
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </li>
                 <li>
                   <button
@@ -113,26 +105,6 @@
                       arrow_drop_down
                     </span>
                   </button>
-                  <div
-                    id="service-drop-down"
-                    class="absolute z-10 flex hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
-                  >
-                    <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                      <ul
-                        class="space-y-4"
-                        aria-labelledby="service-drop-down-button"
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
-                          >
-                            1
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </li>
                 <li>
                   <button
@@ -145,31 +117,11 @@
                       arrow_drop_down
                     </span>
                   </button>
-                  <div
-                    id="resources-drop-down"
-                    class="absolute z-10 flex hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
-                  >
-                    <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                      <ul
-                        class="space-y-4"
-                        aria-labelledby="resources-drop-down-button"
-                      >
-                        <li>
-                          <a
-                            href="#"
-                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
-                          >
-                            1
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </li>
 
                 <li>
                   <a
-                    href="./contact-us.html"
+                    href="./help.html"
                     class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
                     >Contact Us</a
                   >
@@ -324,7 +276,7 @@
             class="w-10 h-10 bg-primary/30 rounded-full flex items-center justify-center relative"
           >
             <img
-              src="./../assets/images/avatar/avatar.png"
+              src="./assets/images/avatar/avatar.png"
               layout="fill"
               objectFit="cover"
               alt="Pharmacy"
@@ -386,9 +338,7 @@
     </header>
     <!-- end top bar -->
     <!-- main section -->
-    <main
-      class="w-full h-fit min-h-[100vh] flex flex-col overflow-y-auto no-scrollbar gap-10 py-4"
-    >
+    <main class="w-full h-[1000vh] flex flex-col space-y-10 gap-10 py-4">
       <div
         class="h-[70vh] w-full flex flex-col items-center justify-center space-y-4 py-10"
       >
@@ -423,136 +373,204 @@
         </div>
       </div>
 
-      <div class="flex flex-row justify-between items-center">
-        <div class="w-[10%] hidden lg:flex items-center justify-center">
-          <button
-            class="w-10 h-10 rounded-full border flex items-center justify-center"
-          >
-            <span class="material-symbols-outlined"> arrow_back </span>
-          </button>
-        </div>
-        <div
-          class="w-full lg:w-[80%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-10 gap-6 px-2"
-        >
-          <a
-            class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
-          >
-            <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
-              <img
-                alt="Emzor Paracetamol 500mg"
-                src="./assets/images/drug/1.png"
-                class="w-full h-full rounded-t-md object-cover"
-              />
-            </div>
-            <div
-              class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+      <div class="w-full h-fit flex flex-col space-y-2">
+        <p class="text-2xl font-semibold mx-10">Popular Drugs</p>
+
+        <div class="w-full flex flex-row">
+          <div class="w-[10%] hidden lg:flex items-center justify-center">
+            <button
+              id="previous-carousel-button"
+              class="w-10 h-10 rounded-full border flex items-center justify-center"
             >
-              <div class="w-full flex flex-row space-x-2 items-end">
-                <p>$22.50</p>
-
-                <span class="flex items-end space-x-2">
-                  <p>-</p>
-                  <p>$52.00</p>
-                </span>
-
-                <span class="text-xs text-gray-400"> 1 / Tablets </span>
-              </div>
-              <p class="font-semibold truncate line-clamp-1">
-                Emzor Paracetamol 500mg
-              </p>
-            </div>
-          </a>
-          <a
-            class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+              <span class="material-symbols-outlined"> arrow_back </span>
+            </button>
+          </div>
+          <div
+            class="w-full lg:w-[80%] flex py-10 gap-6 px-2 slider top-selling-carousel"
           >
-            <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
-              <img
-                alt="Emzor Paracetamol 500mg"
-                src="./assets/images/drug/2.png"
-                class="w-full h-full rounded-t-md object-cover"
-              />
-            </div>
-            <div
-              class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
             >
-              <div class="w-full flex flex-row space-x-2 items-end">
-                <p>$22.50</p>
-
-                <span class="flex items-end space-x-2">
-                  <p>-</p>
-                  <p>$52.00</p>
-                </span>
-
-                <span class="text-xs text-gray-400"> 1 / Tablets </span>
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/1.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
               </div>
-              <p class="font-semibold truncate line-clamp-1">
-                Emzor Paracetamol 500mg
-              </p>
-            </div>
-          </a>
-          <a
-            class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
-          >
-            <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
-              <img
-                alt="Emzor Paracetamol 500mg"
-                src="./assets/images/drug/3.png"
-                class="w-full h-full rounded-t-md object-cover"
-              />
-            </div>
-            <div
-              class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-[#f7f2fa]"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate text-base line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
             >
-              <div class="w-full flex flex-row space-x-2 items-end">
-                <p>$22.50</p>
-
-                <span class="flex items-end space-x-2">
-                  <p>-</p>
-                  <p>$52.00</p>
-                </span>
-
-                <span class="text-xs text-gray-400"> 1 / Tablets </span>
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/2.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
               </div>
-              <p class="font-semibold truncate line-clamp-1">
-                Emzor Paracetamol 500mg
-              </p>
-            </div>
-          </a>
-          <a
-            class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
-          >
-            <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
-              <img
-                alt="Emzor Paracetamol 500mg"
-                src="./assets/images/drug/1.png"
-                class="w-full h-full rounded-t-md object-cover"
-              />
-            </div>
-            <div
-              class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
             >
-              <div class="w-full flex flex-row space-x-2 items-end">
-                <p>$22.50</p>
-
-                <span class="flex items-end space-x-2">
-                  <p>-</p>
-                  <p>$52.00</p>
-                </span>
-
-                <span class="text-xs text-gray-400"> 1 / Tablets </span>
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/3.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
               </div>
-              <p class="font-semibold truncate line-clamp-1">
-                Emzor Paracetamol 500mg
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-[10%] hidden lg:flex items-center justify-center">
-          <button
-            class="w-10 h-10 rounded-full border flex items-center justify-center"
-          >
-            <span class="material-symbols-outlined"> arrow_forward </span>
-          </button>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/1.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/1.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+            <a
+              href="./product-details.html"
+              class="w-full h-fit border flex flex-col items-start rounded-md hover:opacity-70"
+            >
+              <div class="w-full h-64 bg-white dark:bg-slate-700 rounded-t-md">
+                <img
+                  alt="Emzor Paracetamol 500mg"
+                  src="./assets/images/drug/2.png"
+                  class="w-full h-full rounded-t-md object-cover"
+                />
+              </div>
+              <div
+                class="w-full flex flex-col items-start p-2 py-3 bg-secondary/40"
+              >
+                <div class="w-full flex flex-row space-x-2 items-end">
+                  <p>$22.50</p>
+
+                  <span class="flex items-end space-x-2">
+                    <p>-</p>
+                    <p>$52.00</p>
+                  </span>
+
+                  <span class="text-xs text-gray-400"> 1 / Tablets </span>
+                </div>
+                <p class="font-semibold truncate line-clamp-1">
+                  Emzor Paracetamol 500mg
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="w-[10%] hidden lg:flex items-center justify-center">
+            <button
+              id="next-carousel-button"
+              class="w-10 h-10 rounded-full border flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined"> arrow_forward </span>
+            </button>
+          </div>
         </div>
       </div>
     </main>
@@ -593,22 +611,34 @@
           <div class="flex flex-col space-y-5">
             <p class="text-white font-semibold text-sm xl:text-xl">Services</p>
             <div class="flex flex-col space-y-2">
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./compare-drugs.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Compare Drugs
                 </p>
               </a>
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./adverse-effects.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Adverse Effects Checker
                 </p>
               </a>
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./drug-interaction-checker.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Drug Interaction Checker
                 </p>
               </a>
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="/search-pharmacy.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Pharmacy Locator
                 </p>
@@ -620,12 +650,12 @@
               Partnership
             </p>
             <div class="flex flex-col space-y-2">
-              <a href="/pharmacy/register/index.html" class="flex flex-row items-center space-x-2">
+              <a href="'/" class="flex flex-row items-center space-x-2">
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Register Pharmacy
                 </p>
               </a>
-              <a href="/" class="flex flex-row items-center space-x-2">
+              <a href="'/" class="flex flex-row items-center space-x-2">
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Career
                 </p>
@@ -635,12 +665,18 @@
           <div class="flex flex-col space-y-5">
             <p class="text-white font-semibold text-sm xl:text-xl">Support</p>
             <div class="flex flex-col space-y-2">
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   FAQs
                 </p>
               </a>
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Contact Us
                 </p>
@@ -650,12 +686,18 @@
           <div class="flex flex-col space-y-5">
             <p class="text-white font-semibold text-sm xl:text-xl">Resources</p>
             <div class="flex flex-col space-y-2">
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./help.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   Support
                 </p>
               </a>
-              <a href="'/" class="flex flex-row items-center space-x-2">
+              <a
+                href="./news-update.html"
+                class="flex flex-row items-center space-x-2"
+              >
                 <p class="text-white font-semibold text-xs xl:text-base">
                   News Update
                 </p>
@@ -695,23 +737,35 @@
                 class="hidden"
                 aria-labelledby="service-accordion"
               >
-                <div class="flex flex-col space-y-3 items-center">
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                <div class="flex flex-col space-y-3">
+                  <a
+                    href="./adverse-effects.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
+                    <p class="text-white font-semibold text-xs xl:text-base">
+                      Adverse effects checker
+                    </p>
+                  </a>
+                  <a
+                    href="./compare-drugs.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Compare Drugs
                     </p>
                   </a>
-                  <a href="'/" class="flex flex-row items-center space-x-2">
-                    <p class="text-white font-semibold text-xs xl:text-base">
-                      Adverse Effects Checker
-                    </p>
-                  </a>
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                  <a
+                    href="./drug-interaction-checker.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Drug Interaction Checker
                     </p>
                   </a>
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                  <a
+                    href="./search-pharmacy.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Pharmacy Locator
                     </p>
@@ -742,7 +796,7 @@
                 class="hidden"
                 aria-labelledby="partnership-accordion"
               >
-                <div class="flex flex-col space-y-3 items-center">
+                <div class="flex flex-col space-y-3">
                   <a href="'/" class="flex flex-row items-center space-x-2">
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Register Pharmacy
@@ -779,13 +833,19 @@
                 class="hidden"
                 aria-labelledby="support-accordion"
               >
-                <div class="flex flex-col space-y-3 items-center">
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                <div class="flex flex-col space-y-3">
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       FAQs
                     </p>
                   </a>
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Contact Us
                     </p>
@@ -816,13 +876,19 @@
                 class="hidden"
                 aria-labelledby="resources-accordion"
               >
-                <div class="flex flex-col space-y-3 items-center">
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                <div class="flex flex-col space-y-3">
+                  <a
+                    href="./help.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       Support
                     </p>
                   </a>
-                  <a href="'/" class="flex flex-row items-center space-x-2">
+                  <a
+                    href="./news-update.html"
+                    class="flex flex-row items-center space-x-2"
+                  >
                     <p class="text-white font-semibold text-xs xl:text-base">
                       News Update
                     </p>
@@ -851,25 +917,23 @@
         <div class="flex flex-row items-center space-x-4">
           <a href="https://facebook.com/" aria-label="Facebook link">
             <img
-              src="./../assets/images/icons/facebook.png"
+              src="./assets/images/icons/facebook.png"
               class="w-8 h-8 text-white"
             />
           </a>
           <a href="https://instagram.com/" aria-label="Facebook link">
             <img
-              src="./../assets/images/icons/instagram.png"
+              src="./assets/images/icons/instagram.png"
               class="w-8 h-8 text-white"
             />
           </a>
           <a href="https://x.com/" aria-label="Facebook link">
-            <img
-              src="./../assets/images/icons/x.png"
-              class="w-8 h-8 text-white"
-            />
+            <img src="./assets/images/icons/x.png" class="w-8 h-8 text-white" />
           </a>
         </div>
       </div>
     </footer>
+    <!-- end footer -->
 
     <!-- drawer component -->
     <div
@@ -889,7 +953,7 @@
         <div class="flex flex-row items-center space-x-2">
           <a class="w-16 h-10 flex items-center justify-center">
             <img
-              src="./../assets/images/logos/logo.png"
+              src="./assets/images/logos/logo.png"
               alt="logo"
               class="w-full h-full object-contain"
             />
@@ -972,7 +1036,7 @@
               <div class="w-full flex items-end justify-between">
                 <div class="w-24 h-24 bg-primary rounded-full relative">
                   <img
-                    src="./../assets/images/avatar/avatar.png"
+                    src="./assets/images/avatar/avatar.png"
                     alt="avatar"
                     layout="fill"
                     objectFit="cover"
@@ -1208,7 +1272,7 @@
           <div class="w-full p-4 md:p-5 flex flex-col space-y-6 items-center">
             <div class="w-36 h-36 bg-primary rounded-full">
               <img
-                src="./../assets/images/avatar/avatar.png"
+                src="./assets/images/avatar/avatar.png"
                 alt="avatar"
                 layout="fill"
                 objectFit="cover"
@@ -1250,7 +1314,148 @@
     </div>
     <!-- end change photo modal -->
 
+    <!-- dropdowns -->
+    <!-- category dropdown -->
+    <div
+      id="category-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="category-drop-down-button">
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Men's health
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Women's health
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Mom and baby
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Supplements
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              OTC
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Prescriptions
+            </a>
+          </li>
+          <li>
+            <a
+              href="./sub-categories.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Pain relief
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end category drop down -->
+    <!-- services dropdown -->
+    <div
+      id="service-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="service-drop-down-button">
+          <li>
+            <a
+              href="./adverse-effects.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Adverse effects checker
+            </a>
+          </li>
+          <li>
+            <a
+              href="./compare-drugs.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Compare drugs
+            </a>
+          </li>
+          <li>
+            <a
+              href="./drug-interaction-checker.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+              >Drug interaction checker
+            </a>
+          </li>
+          <li>
+            <a
+              href="./search-pharmacy.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Pharmacy locator
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end services drop down -->
+    <!-- resources drop down -->
+    <div
+      id="resources-drop-down"
+      class="absolute z-10 hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
+    >
+      <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+        <ul class="space-y-4" aria-labelledby="resources-drop-down-button">
+          <li>
+            <a
+              href="./blogs.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="./news-update.html"
+              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              News update
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end resources drop down -->
+    <!-- end dropdowns -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/carousel.js"></script>
   </body>
 </html>
